@@ -13,6 +13,14 @@ Fixed::Fixed(const Fixed &src) {
 	*this = src;
 }
 
+Fixed::Fixed(const int i) {
+
+}
+
+Fixed::Fixed(const float f) {
+
+}
+
 // Operator overloads
 
 Fixed& Fixed::operator=(const Fixed& src) {
