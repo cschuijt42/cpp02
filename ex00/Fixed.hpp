@@ -1,3 +1,6 @@
+#ifndef FIXED_H
+#define FIXED_H
+
 class Fixed
 {
 	public:
@@ -12,3 +15,5 @@ class Fixed
 		int 			 value;
 		static const int point = 8;
 };
+
+#endif
