@@ -2,11 +2,11 @@ class Fixed
 {
 	public:
 		Fixed();
-		Fixed(Fixed &src);
-		Fixed& operator=(Fixed& src);
+		Fixed(const Fixed &src);
+		Fixed& operator=(const Fixed& src);
 		~Fixed();
 
-		int	 getRawBits( void );
+		int	 getRawBits( void ) const;
 		void setRawBits( int const raw );
 	private:
 		int 			 value;
