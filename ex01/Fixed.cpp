@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 // Constructors
 
@@ -14,11 +15,11 @@ Fixed::Fixed(const Fixed &src) {
 }
 
 Fixed::Fixed(const int i) {
-
+	value = i << point;
 }
 
 Fixed::Fixed(const float f) {
-
+	value = round(f * (2^point));
 }
 
 // Operator overloads
@@ -29,8 +30,9 @@ Fixed& Fixed::operator=(const Fixed& src) {
 	return *this;
 }
 
-float  Fixed::operator<<(const Fixed& src) {
-
+std::ostream& operator<<(std::ostream &stream, const Fixed &fixed) {
+	stream << fixed.toFloat();
+	return stream;
 }
 
 // Destructor
@@ -54,9 +56,9 @@ void Fixed::setRawBits( int const raw ) {
 // Member functions
 
 float Fixed::toFloat( void ) const {
-
+	return (float)value / (2^point);
 }
 
 int	  Fixed::toInt( void ) const {
-
+	return value >> point;
 }

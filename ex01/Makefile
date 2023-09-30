@@ -8,7 +8,7 @@ endif
 ifeq ($(UNAME_S), Darwin)
 	COMPIL_FLAGS	?= -Wall -Wextra -Werror -std=c++17
 else
-	COMPIL_FLAGS	?= -Wall -Wextra -Werror -std=c++17 -lstdc++
+	COMPIL_FLAGS	?= -Wall -Wextra -Werror -std=c++17 -lstdc++ -lm
 endif
 INCLUDE_FLAGS		?=
 

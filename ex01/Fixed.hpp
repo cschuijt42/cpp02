@@ -12,7 +12,6 @@ class Fixed
 		Fixed(const float f);
 
 		Fixed& operator=(const Fixed& src);
-		float  operator<<(const Fixed& src);
 
 		~Fixed();
 
@@ -21,9 +20,12 @@ class Fixed
 
 		float toFloat( void ) const;
 		int	  toInt( void ) const;
+
 	private:
 		int 			 value;
 		static const int point = 8;
 };
+
+std::ostream& operator<<(std::ostream& stream, const Fixed& fixed);
 
 #endif
