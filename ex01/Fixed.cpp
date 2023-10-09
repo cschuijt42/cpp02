@@ -15,11 +15,11 @@ Fixed::Fixed(const Fixed &src) {
 }
 
 Fixed::Fixed(const int i) {
-	value = i << point;
+	value = i * (1 << point);
 }
 
 Fixed::Fixed(const float f) {
-	value = round(f * (2^point));
+	value = round(f * (1 << point));
 }
 
 // Operator overloads
@@ -56,7 +56,7 @@ void Fixed::setRawBits( int const raw ) {
 // Member functions
 
 float Fixed::toFloat( void ) const {
-	return (float)value / (2^point);
+	return (float)(value) / (1 << point);
 }
 
 int	  Fixed::toInt( void ) const {
