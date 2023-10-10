@@ -52,16 +52,12 @@ Fixed& Fixed::operator-(const Fixed& operand) {
 }
 
 Fixed& Fixed::operator*(const Fixed& operand) {
-	this->setRawBits(
-		this->getRawBits() * operand.getRawBits()
-	);
+	*this = Fixed(this->toFloat() * operand.toFloat());
 	return *this;
 }
 
 Fixed& Fixed::operator/(const Fixed& operand) {
-	this->setRawBits(
-		this->getRawBits() / operand.getRawBits()
-	);
+	*this = Fixed(this->toFloat() / operand.toFloat());
 	return *this;
 }
 
